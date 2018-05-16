@@ -33,9 +33,9 @@ before_deploy:
   - GOOS=darwin CGO_ENABLED=0 go build -o dist/sops-${TRAVIS_TAG}.darwin go.mozilla.org/sops/cmd/sops
   - GOOS=windows CGO_ENABLED=0 go build -o dist/sops-${TRAVIS_TAG}.exe go.mozilla.org/sops/cmd/sops
   - GOOS=linux CGO_ENABLED=0 go build -o dist/sops-${TRAVIS_TAG}.linux go.mozilla.org/sops/cmd/sops
-  - sha256sum dist/sops-${TRAVIS_TAG}.darwin > dist/sops-${TRAVIS_TAG}.darwin.sha
-  - sha256sum dist/sops-${TRAVIS_TAG}.windows > dist/sops-${TRAVIS_TAG}.windows.sha
-  - sha256sum dist/sops-${TRAVIS_TAG}.linux > dist/sops-${TRAVIS_TAG}.linux.sha
+  - sha256sum dist/sops-${TRAVIS_TAG}.darwin > dist/sops-${TRAVIS_TAG}.darwin.sha256sum.txt
+  - sha256sum dist/sops-${TRAVIS_TAG}.windows > dist/sops-${TRAVIS_TAG}.windows.sha256sum.txt
+  - sha256sum dist/sops-${TRAVIS_TAG}.linux > dist/sops-${TRAVIS_TAG}.linux.sha256sum.txt
 
 deploy:
   provider: releases
